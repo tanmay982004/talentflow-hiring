@@ -1,6 +1,6 @@
 # 🚀 TalentFlow - Modern Hiring Management Platform
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://talentflow-hiring.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://tanmay-talentflow-hiring.vercel.app)
 [![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -10,7 +10,7 @@
 ## 📋 Deliverables
 
 ### 🌐 Deployed App Link
-**🔗 [TalentFlow Live Application](https://talentflow-hiring.vercel.app)**
+**🔗 [TalentFlow Live Application](https://tanmay-talentflow-hiring.vercel.app)**
 
 ### 💻 GitHub Repository Link
 **📂 [GitHub Repository](https://github.com/tanmay982004/talentflow-hiring)**
