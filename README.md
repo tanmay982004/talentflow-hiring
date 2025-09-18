@@ -7,11 +7,18 @@
 
 > A comprehensive, modern hiring management platform built with React, TypeScript, and cutting-edge web technologies. Streamline your entire recruitment process from job posting to candidate assessment.
 
-## 🌟 Live Demo
+## 📋 Deliverables
 
-**🔗 [View Live Application](https://talentflow-hiring.vercel.app)**
+### 🌐 Deployed App Link
+**🔗 [TalentFlow Live Application](https://talentflow-hiring.vercel.app)**
 
-*Experience the full TalentFlow platform with pre-loaded data including 30+ job listings, 1000+ candidate profiles, and 3 comprehensive assessment examples.*
+### 💻 GitHub Repository Link
+**📂 [GitHub Repository](https://github.com/tanmay982004/talentflow-hiring)**
+
+### 📖 Documentation
+This README includes comprehensive setup instructions, architecture details, technical decisions, and known issues.
+
+---
 
 ## ✨ Key Features
 
@@ -76,14 +83,15 @@
 - **Vercel** - Zero-config deployment
 - **GitHub** - Version control and collaboration
 
-## 🚀 Quick Start
+## 🚀 Setup Instructions
 
 ### Prerequisites
-- **Node.js** (v18 or higher)
-- **npm** or **yarn**
-- Modern web browser
+- **Node.js** (v18 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js) or **yarn**
+- **Git** - [Download here](https://git-scm.com/)
+- Modern web browser (Chrome, Firefox, Safari, Edge)
 
-### Installation
+### Local Development Setup
 
 1. **Clone the repository**
 ```bash
@@ -94,20 +102,43 @@ cd talentflow-hiring
 2. **Install dependencies**
 ```bash
 npm install
+# or if you prefer yarn
+yarn install
 ```
 
 3. **Start the development server**
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
 4. **Open your browser**
 Navigate to `http://localhost:5173`
 
-The application will automatically seed with:
-- **30+ Professional Job Listings** (Frontend, Backend, Product, Design, DevOps roles)
-- **1000+ Realistic Candidate Profiles** with relevant skills and experience
-- **3 Comprehensive Assessment Examples** ready for use
+### Automatic Data Seeding
+
+The application will automatically seed with realistic data on first load:
+- **30+ Professional Job Listings** across various tech roles
+- **1000+ Realistic Candidate Profiles** with skills matching job requirements
+- **3 Comprehensive Assessment Examples** for Frontend, Backend, and Product Manager roles
+
+### Production Build
+
+```bash
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+### Environment Setup Notes
+
+- **No environment variables required** - the app uses Mock Service Worker (MSW) for API simulation
+- **No external database setup needed** - uses IndexedDB through Dexie.js
+- **HTTPS not required** for local development
+- **Cross-origin requests handled** by MSW in both development and production
 
 ## 📋 Available Scripts
 
@@ -140,22 +171,92 @@ The application will automatically seed with:
 
 ## 🏗️ Architecture Overview
 
+### Project Structure
+
 ```
-src/
-├── components/          # Reusable UI components
-│   ├── ui/             # Basic UI elements
-│   ├── JobCard.tsx     # Job listing component
-│   ├── CandidateCard.tsx # Candidate profile component
-│   └── AssessmentCard.tsx # Assessment display component
-├── pages/              # Main application pages
-│   ├── Jobs/           # Job management pages
-│   ├── Candidates/     # Candidate pipeline pages
-│   └── Assessments/    # Assessment builder pages
-├── hooks/              # Custom React hooks
-├── services/           # API service layers
-├── types/              # TypeScript type definitions
-├── utils/              # Utility functions
-└── db/                 # Database setup and seeding
+talentflow-hiring/
+├── public/                    # Static assets
+│   ├── mockServiceWorker.js   # MSW service worker
+│   └── vite.svg               # Favicon
+├── src/
+│   ├── components/            # Reusable UI components
+│   │   ├── ui/                # Basic UI elements (Modal, FeedbackPopup)
+│   │   ├── AppLayout.tsx       # Main application layout
+│   │   ├── JobCard.tsx         # Job listing component
+│   │   ├── CandidateCard.tsx   # Candidate profile component
+│   │   ├── AssessmentCard.tsx  # Assessment display component
+│   │   ├── KanbanBoard.tsx     # Drag-and-drop candidate board
+│   │   ├── FileUpload.tsx      # File upload component
+│   │   └── NoteForm.tsx        # Rich text note editor
+│   ├── pages/                 # Main application pages
+│   │   ├── Jobs/              # Job management
+│   │   │   ├── JobsList.tsx       # Job listings page
+│   │   │   └── JobDetails.tsx     # Individual job details & candidate pipeline
+│   │   ├── Candidates/        # Candidate management
+│   │   │   ├── CandidatesList.tsx # All candidates view
+│   │   │   └── CandidateProfilePage.tsx # Individual candidate details
+│   │   └── Assessments/       # Assessment system
+│   │       ├── AssessmentsPage.tsx   # Assessment management dashboard
+│   │       ├── AssessmentBuilder.tsx # Assessment creation/editing
+│   │       └── AssessmentPreview.tsx # Assessment preview mode
+│   ├── hooks/                 # Custom React hooks
+│   │   ├── useJobs.ts          # Job data management
+│   │   ├── useCandidates.ts    # Candidate data management
+│   │   └── useAssessments.tsx  # Assessment data management
+│   ├── services/              # API service layers
+│   │   ├── jobsService.ts      # Job-related API calls
+│   │   └── candidatesService.ts # Candidate-related API calls
+│   ├── api/                   # API configuration
+│   │   ├── client.ts           # TanStack Query client setup
+│   │   └── msw/                # Mock Service Worker setup
+│   │       ├── browser.ts         # MSW browser configuration
+│   │       └── handlers.ts        # API route handlers
+│   ├── db/                    # Database layer
+│   │   ├── dexie.ts            # IndexedDB setup with Dexie
+│   │   └── seed.ts             # Database seeding logic
+│   ├── types/                 # TypeScript definitions
+│   │   └── index.ts            # All type definitions
+│   ├── utils/                 # Utility functions
+│   │   ├── migrateDatabase.ts  # Database migration tools
+│   │   └── resetDatabase.ts    # Database reset functionality
+│   ├── App.tsx                # Main App component with routing
+│   ├── main.tsx               # Application entry point
+│   └── index.css              # Global styles (Tailwind CSS)
+├── package.json               # Dependencies and scripts
+├── tsconfig.json              # TypeScript configuration
+├── vite.config.ts             # Vite build configuration
+├── tailwind.config.js         # Tailwind CSS configuration
+└── vercel.json                # Vercel deployment configuration
+```
+
+### Data Flow Architecture
+
+```
+┌──────────────────────────────────────────────────────┐
+│                    React Components                     │
+│  (JobsList, CandidatesList, AssessmentBuilder, etc.)  │
+└──────────────────────────────────────────────────────┘
+                             │
+                             │ (React Hooks: useJobs, useCandidates)
+                             │
+┌──────────────────────────────────────────────────────┐
+│                   TanStack Query                       │
+│      (Data fetching, caching, synchronization)        │
+└──────────────────────────────────────────────────────┘
+                             │
+                             │ (HTTP requests to /api/*)
+                             │
+┌──────────────────────────────────────────────────────┐
+│               Mock Service Worker (MSW)               │
+│          (Intercepts HTTP calls, mocks API)           │
+└──────────────────────────────────────────────────────┘
+                             │
+                             │ (CRUD operations)
+                             │
+┌──────────────────────────────────────────────────────┐
+│               IndexedDB (via Dexie.js)                │
+│         (Browser-based local database storage)        │
+└──────────────────────────────────────────────────────┘
 ```
 
 ## 🌟 Highlights
@@ -179,14 +280,148 @@ src/
 - **Error Handling** with graceful fallbacks
 - **Accessibility** considerations throughout
 
+## 📝 Technical Decisions
+
+### Frontend Architecture Decisions
+
+#### **React 19 + TypeScript**
+- **Decision**: Use React 19 with TypeScript for type safety and modern React features
+- **Reasoning**: Provides compile-time error checking, better IDE support, and maintainable code
+- **Trade-offs**: Longer build times, learning curve for TypeScript
+
+#### **Vite Build Tool**
+- **Decision**: Use Vite instead of Create React App
+- **Reasoning**: Significantly faster development builds, native ES modules, better HMR
+- **Trade-offs**: Newer ecosystem, some plugins might not be available
+
+#### **Tailwind CSS for Styling**
+- **Decision**: Utility-first CSS framework over styled-components
+- **Reasoning**: Faster development, consistent design system, smaller bundle size
+- **Trade-offs**: HTML can look cluttered with many classes
+
+### State Management Decisions
+
+#### **TanStack Query for Server State**
+- **Decision**: Use TanStack Query instead of Redux for data fetching
+- **Reasoning**: Built-in caching, background updates, optimistic updates, error handling
+- **Trade-offs**: Additional learning curve, overkill for simple apps
+
+#### **React Hook Form for Forms**
+- **Decision**: Use React Hook Form over Formik
+- **Reasoning**: Better performance (uncontrolled components), smaller bundle size, TypeScript support
+- **Trade-offs**: Different mental model from controlled components
+
+### Database Architecture Decisions
+
+#### **Mock Service Worker (MSW) + IndexedDB**
+- **Decision**: Use client-side database simulation instead of real backend
+- **Reasoning**: No backend setup required, works offline, realistic API simulation
+- **Trade-offs**: Limited to single user, data lost on browser reset
+
+#### **Dexie.js for IndexedDB**
+- **Decision**: Use Dexie.js wrapper instead of raw IndexedDB
+- **Reasoning**: Promise-based API, TypeScript support, query capabilities
+- **Trade-offs**: Additional dependency, learning curve
+
+### Component Architecture Decisions
+
+#### **Compound Components Pattern**
+- **Decision**: Use compound components for complex UI elements (KanbanBoard, FileUpload)
+- **Reasoning**: Better composition, reusability, and API design
+- **Trade-offs**: More complex component structure
+
+#### **Custom Hooks for Data Logic**
+- **Decision**: Extract data fetching logic into custom hooks
+- **Reasoning**: Separation of concerns, testability, reusability
+- **Trade-offs**: More abstraction layers
+
+### Deployment Decisions
+
+#### **Vercel for Hosting**
+- **Decision**: Use Vercel over Netlify or AWS
+- **Reasoning**: Zero-config deployment, excellent developer experience, automatic HTTPS
+- **Trade-offs**: Vendor lock-in, pricing at scale
+
+#### **MSW in Production**
+- **Decision**: Enable Mock Service Worker in production
+- **Reasoning**: No backend required, demonstrates full functionality
+- **Trade-offs**: Not suitable for real applications, performance overhead
+
+## ⚠️ Known Issues
+
+### Current Limitations
+
+#### **Data Persistence**
+- **Issue**: Data is stored in browser's IndexedDB and gets reset when browser data is cleared
+- **Impact**: Users lose all their data when clearing browser cache
+- **Workaround**: Application automatically re-seeds data on reload
+- **Future Fix**: Implement data export/import functionality
+
+#### **File Upload Simulation**
+- **Issue**: File uploads are simulated and don't actually persist files
+- **Impact**: Uploaded files are lost on page refresh
+- **Workaround**: Files are stored in memory for the current session
+- **Future Fix**: Integrate with cloud storage service (AWS S3, Cloudinary)
+
+#### **Mobile Responsiveness**
+- **Issue**: Kanban board drag-and-drop is not optimized for mobile touch
+- **Impact**: Difficult to move candidates on mobile devices
+- **Workaround**: Use desktop/tablet for best experience
+- **Future Fix**: Implement touch-friendly drag-and-drop library
+
+#### **Search Performance**
+- **Issue**: Client-side search across 1000+ candidates can be slow
+- **Impact**: Slight delay when searching through large candidate lists
+- **Workaround**: Debounced search with 300ms delay
+- **Future Fix**: Implement server-side search with indexing
+
+### Browser Compatibility
+
+#### **Modern Browser Required**
+- **Issue**: Application uses modern JavaScript features (ES2020+)
+- **Impact**: May not work on very old browsers (IE11, old Safari)
+- **Workaround**: Use modern browsers (Chrome 88+, Firefox 85+, Safari 14+)
+- **Future Fix**: Add polyfills if broader support needed
+
+#### **IndexedDB Support**
+- **Issue**: Requires IndexedDB support for data storage
+- **Impact**: Won't work in browsers with IndexedDB disabled
+- **Workaround**: Enable IndexedDB in browser settings
+- **Future Fix**: Fallback to localStorage with reduced functionality
+
+### Development Environment Issues
+
+#### **TypeScript Strict Mode**
+- **Issue**: Some unused variables cause build warnings in production
+- **Impact**: Warnings in build output but doesn't break functionality
+- **Workaround**: Created lenient tsconfig.prod.json for deployment
+- **Future Fix**: Clean up all unused imports and variables
+
+#### **MSW Service Worker**
+- **Issue**: Service worker needs to be updated when MSW version changes
+- **Impact**: API requests may fail after MSW updates
+- **Workaround**: Run `npx msw init public` to update service worker
+- **Future Fix**: Automate service worker updates in build process
+
 ## 🔮 Future Enhancements
 
-- 📧 Email notifications for candidate updates
-- 📈 Analytics and reporting dashboard
-- 👥 Team collaboration features
-- 🔐 Authentication and user management
-- 📱 Native mobile application
-- 🤖 AI-powered candidate matching
+### Short-term Improvements
+- 📱 **Mobile Optimization**: Touch-friendly drag-and-drop for mobile devices
+- 🔍 **Advanced Search**: Filters, sorting, and search across multiple fields
+- 📥 **Data Export**: Export candidates and assessments as CSV/PDF
+- 📄 **Assessment Templates**: Pre-built templates for common roles
+
+### Medium-term Features
+- 📧 **Email Integration**: Notifications for candidate status changes
+- 📈 **Analytics Dashboard**: Hiring metrics, time-to-hire, conversion rates
+- 👥 **Team Collaboration**: Multiple users, role-based permissions
+- 🔐 **Authentication System**: User accounts, secure access
+
+### Long-term Vision
+- 🤖 **AI-Powered Matching**: Automatic candidate-job matching using ML
+- 📱 **Native Mobile App**: React Native application for mobile hiring
+- 🔗 **API Integrations**: Connect with ATS systems, job boards, email providers
+- 🌐 **Multi-language Support**: Internationalization for global hiring teams
 
 ## 📄 License
 
