@@ -116,9 +116,19 @@ const generateSlug = (title: string): string => {
 
 export async function seedDB() {
   const jobsCount = await db.jobs.count();
-  if (jobsCount > 0) {
-    console.log('DB already seeded with professional data');
+  const assessmentsCount = await db.assessments.count();
+  
+  if (jobsCount > 0 && assessmentsCount >= 3) {
+    console.log('DB already seeded with professional data and assessments');
     return;
+  }
+  
+  // Clear existing data to ensure fresh seeding with assessments
+  if (jobsCount > 0) {
+    console.log('Clearing existing data to add assessments...');
+    await db.assessments.clear();
+    await db.candidates.clear();
+    await db.jobs.clear();
   }
 
   const stages = ['applied','screen','tech','offer','hired','rejected'] as const;
@@ -174,6 +184,296 @@ export async function seedDB() {
   }
   await db.candidates.bulkAdd(candidates);
   
-  // ... (Assessments are the same)
-  console.log('Final intelligent seeding complete.');
+  // Create three comprehensive seeded assessments
+  const assessments = [];
+  
+  // Find specific jobs for our assessments
+  const frontendJob = jobs.find(job => job.title === 'Senior Frontend Engineer (React)');
+  const backendJob = jobs.find(job => job.title === 'Lead Backend Developer (Node.js)');
+  const productJob = jobs.find(job => job.title === 'Senior Product Manager');
+  
+  if (frontendJob) {
+    assessments.push({
+      id: nanoid(),
+      jobId: frontendJob.id,
+      title: 'Senior Frontend Engineer Technical Assessment',
+      createdAt: Date.now() - 7 * 24 * 60 * 60 * 1000, // 7 days ago
+      sections: [
+        {
+          id: nanoid(),
+          title: 'React & JavaScript Fundamentals',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'Explain the difference between useState and useEffect hooks in React.',
+              type: 'long-text' as const,
+              required: true,
+              options: []
+            },
+            {
+              id: nanoid(),
+              label: 'What are React keys and why are they important?',
+              type: 'single-choice' as const,
+              required: true,
+              options: [
+                { value: 'Keys help React identify which items have changed, are added, or are removed' },
+                { value: 'Keys are used for styling components' },
+                { value: 'Keys are only needed for forms' },
+                { value: 'Keys are deprecated in modern React' }
+              ]
+            },
+            {
+              id: nanoid(),
+              label: 'Which of the following are valid ways to handle state in React? (Select all that apply)',
+              type: 'multi-choice' as const,
+              required: true,
+              options: [
+                { value: 'useState hook' },
+                { value: 'useReducer hook' },
+                { value: 'Context API' },
+                { value: 'Redux' },
+                { value: 'Direct DOM manipulation' }
+              ]
+            }
+          ]
+        },
+        {
+          id: nanoid(),
+          title: 'Performance & Optimization',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'How would you optimize a React application for better performance?',
+              type: 'long-text' as const,
+              required: true,
+              options: []
+            },
+            {
+              id: nanoid(),
+              label: 'Rate your experience with TypeScript (1-10)',
+              type: 'numeric' as const,
+              required: true,
+              min: 1,
+              max: 10,
+              options: []
+            }
+          ]
+        },
+        {
+          id: nanoid(),
+          title: 'Code Portfolio',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'Upload your resume or portfolio (PDF format preferred)',
+              type: 'file' as const,
+              required: true,
+              fileTypes: '.pdf,.doc,.docx',
+              maxFileSize: 5,
+              allowMultiple: false,
+              options: []
+            }
+          ]
+        }
+      ]
+    });
+  }
+  
+  if (backendJob) {
+    assessments.push({
+      id: nanoid(),
+      jobId: backendJob.id,
+      title: 'Backend Developer System Design Assessment',
+      createdAt: Date.now() - 5 * 24 * 60 * 60 * 1000, // 5 days ago
+      sections: [
+        {
+          id: nanoid(),
+          title: 'Node.js & API Design',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'Describe the event loop in Node.js and how it handles asynchronous operations.',
+              type: 'long-text' as const,
+              required: true,
+              options: []
+            },
+            {
+              id: nanoid(),
+              label: 'What is the difference between REST and GraphQL?',
+              type: 'single-choice' as const,
+              required: true,
+              options: [
+                { value: 'REST uses multiple endpoints, GraphQL uses a single endpoint' },
+                { value: 'REST is faster than GraphQL' },
+                { value: 'GraphQL only works with databases' },
+                { value: 'There is no difference' }
+              ]
+            },
+            {
+              id: nanoid(),
+              label: 'How many years of experience do you have with Node.js?',
+              type: 'numeric' as const,
+              required: true,
+              min: 0,
+              max: 20,
+              options: []
+            }
+          ]
+        },
+        {
+          id: nanoid(),
+          title: 'Database & System Design',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'Which database types have you worked with? (Select all that apply)',
+              type: 'multi-choice' as const,
+              required: true,
+              options: [
+                { value: 'PostgreSQL' },
+                { value: 'MongoDB' },
+                { value: 'Redis' },
+                { value: 'MySQL' },
+                { value: 'Elasticsearch' },
+                { value: 'DynamoDB' }
+              ]
+            },
+            {
+              id: nanoid(),
+              label: 'Design a system that can handle 1 million users. Describe your architecture choices.',
+              type: 'long-text' as const,
+              required: true,
+              options: []
+            }
+          ]
+        },
+        {
+          id: nanoid(),
+          title: 'Technical Documentation',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'Upload a code sample or technical documentation you\'ve written',
+              type: 'file' as const,
+              required: false,
+              fileTypes: '.pdf,.md,.txt,.js,.ts,.py',
+              maxFileSize: 10,
+              allowMultiple: true,
+              options: []
+            }
+          ]
+        }
+      ]
+    });
+  }
+  
+  if (productJob) {
+    assessments.push({
+      id: nanoid(),
+      jobId: productJob.id,
+      title: 'Product Manager Strategic Assessment',
+      createdAt: Date.now() - 3 * 24 * 60 * 60 * 1000, // 3 days ago
+      sections: [
+        {
+          id: nanoid(),
+          title: 'Product Strategy',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'How do you prioritize feature requests from different stakeholders?',
+              type: 'long-text' as const,
+              required: true,
+              options: []
+            },
+            {
+              id: nanoid(),
+              label: 'What is your preferred product management methodology?',
+              type: 'single-choice' as const,
+              required: true,
+              options: [
+                { value: 'Agile/Scrum' },
+                { value: 'Lean Startup' },
+                { value: 'Design Thinking' },
+                { value: 'OKRs (Objectives and Key Results)' },
+                { value: 'Shape Up (Basecamp)' }
+              ]
+            },
+            {
+              id: nanoid(),
+              label: 'Rate your experience level (1-10) in these areas:',
+              type: 'multi-choice' as const,
+              required: true,
+              options: [
+                { value: 'User Research & Analytics' },
+                { value: 'A/B Testing & Experimentation' },
+                { value: 'Roadmap Planning' },
+                { value: 'Stakeholder Management' },
+                { value: 'Technical Understanding' }
+              ]
+            }
+          ]
+        },
+        {
+          id: nanoid(),
+          title: 'Market Analysis',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'Describe a time when you had to pivot a product strategy. What was your approach?',
+              type: 'long-text' as const,
+              required: true,
+              options: []
+            },
+            {
+              id: nanoid(),
+              label: 'How many years of product management experience do you have?',
+              type: 'numeric' as const,
+              required: true,
+              min: 0,
+              max: 25,
+              options: []
+            }
+          ]
+        },
+        {
+          id: nanoid(),
+          title: 'Portfolio & Case Studies',
+          questions: [
+            {
+              id: nanoid(),
+              label: 'Upload your product portfolio or case study examples',
+              type: 'file' as const,
+              required: true,
+              fileTypes: '.pdf,.ppt,.pptx,.doc,.docx',
+              maxFileSize: 15,
+              allowMultiple: true,
+              options: []
+            },
+            {
+              id: nanoid(),
+              label: 'What type of products have you managed? (Select all that apply)',
+              type: 'multi-choice' as const,
+              required: true,
+              options: [
+                { value: 'B2B SaaS' },
+                { value: 'Consumer Mobile Apps' },
+                { value: 'E-commerce Platforms' },
+                { value: 'Enterprise Software' },
+                { value: 'APIs & Developer Tools' },
+                { value: 'Hardware Products' }
+              ]
+            }
+          ]
+        }
+      ]
+    });
+  }
+  
+  // Add the assessments to the database
+  if (assessments.length > 0) {
+    await db.assessments.bulkAdd(assessments);
+    console.log(`Added ${assessments.length} comprehensive seeded assessments`);
+  }
+  
+  console.log('Final intelligent seeding complete with assessments.');
 }
