@@ -85,7 +85,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
   return (
     <Modal isOpen={isOpen} onClose={handleClose} title="Add New Candidate">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        {/* Name Field */}
+        {}
         <div>
           <label htmlFor="name" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
             <UserIcon className="w-4 h-4 mr-2 text-purple-500" />
@@ -106,7 +106,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
           )}
         </div>
 
-        {/* Email Field */}
+        {}
         <div>
           <label htmlFor="email" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
             <EnvelopeIcon className="w-4 h-4 mr-2 text-purple-500" />
@@ -130,7 +130,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
           )}
         </div>
 
-        {/* Job Selection */}
+        {}
         <div>
           <label htmlFor="jobId" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
             <BriefcaseIcon className="w-4 h-4 mr-2 text-purple-500" />
@@ -153,7 +153,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
           )}
         </div>
 
-        {/* Stage Selection */}
+        {}
         <div>
           <label htmlFor="stage" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
             <span className="w-4 h-4 mr-2 text-purple-500">🎯</span>
@@ -175,7 +175,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
           )}
         </div>
 
-        {/* Profile/Bio Field */}
+        {}
         <div>
           <label htmlFor="profile" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
             <DocumentTextIcon className="w-4 h-4 mr-2 text-purple-500" />
@@ -196,7 +196,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
           )}
         </div>
 
-        {/* Form Actions */}
+        {}
         <div className="flex items-center justify-end space-x-3 pt-3 border-t border-gray-200">
           <button
             type="button"

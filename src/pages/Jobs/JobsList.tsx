@@ -301,7 +301,7 @@ const JobsListPage: React.FC = () => {
     return (
         <>
         <div className="space-y-8">
-            {/* Hero Section */}
+            {}
             <div className="relative">
                 <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
                     <div>
@@ -342,10 +342,10 @@ const JobsListPage: React.FC = () => {
                 </div>
             </div>
 
-            {/* Modern Filters Section */}
+            {}
             <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
                 <div className="flex flex-col lg:flex-row gap-4">
-                    {/* Search Input */}
+                    {}
                     <div className="flex-1">
                         <label htmlFor="search" className="block text-sm font-semibold text-gray-700 mb-2">Search Jobs</label>
                         <div className="relative">
@@ -365,7 +365,7 @@ const JobsListPage: React.FC = () => {
                         </div>
                     </div>
                     
-                    {/* Status Filter */}
+                    {}
                     <div className="w-full lg:w-48">
                         <label htmlFor="status" className="block text-sm font-semibold text-gray-700 mb-2">Job Status</label>
                         <select 
@@ -380,7 +380,7 @@ const JobsListPage: React.FC = () => {
                         </select>
                     </div>
                     
-                    {/* Page Size Filter */}
+                    {}
                     <div className="w-full lg:w-48">
                         <label htmlFor="pageSize" className="block text-sm font-semibold text-gray-700 mb-2">Display</label>
                         <select 

@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import  {useForm, type SubmitHandler} from 'react-hook-form';
 import type {Job} from '../types';
 
-
 type FormValues = {
     title: string;
     slug: string;

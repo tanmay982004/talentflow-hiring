@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid';
 
 // --- NEW: Realistic Data Arrays ---
 
-
 const FIRST_NAMES = [
   "Aisha", "Ben", "Chloe", "David", "Eva", "Frank", "Grace", "Henry", "Isla", "Jack",
   "Kara", "Leo", "Mia", "Noah", "Olivia", "Paul", "Quinn", "Ruby", "Sam", "Tara",
@@ -105,10 +104,7 @@ const CANDIDATE_PROFILES = {
   ]
 };
 
-
-
 // --- NEW: Categorized Candidate Profiles ---
-
 
 const generateSlug = (title: string): string => {
     return title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-').replace(/^-+/, '').replace(/-+$/, '');

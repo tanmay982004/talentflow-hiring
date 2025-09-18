@@ -48,7 +48,7 @@ const AssessmentCard: React.FC<AssessmentCardProps> = ({
     <div className="group hover-lift">
       <div className="relative glass-strong rounded-2xl p-6 border border-white/30 hover:border-purple-300/50 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
         
-        {/* Header */}
+        {}
         <div className="mb-6">
           <div className="flex items-start space-x-3 mb-3">
             <div className="w-12 h-12 bg-primary-gradient rounded-xl flex items-center justify-center animate-pulse-soft">
@@ -68,7 +68,7 @@ const AssessmentCard: React.FC<AssessmentCardProps> = ({
           </div>
         </div>
 
-        {/* Stats */}
+        {}
         <div className="mb-6">
           <div className="grid grid-cols-2 gap-4">
             <div className="glass rounded-lg p-3 border border-white/20 text-center">
@@ -86,7 +86,7 @@ const AssessmentCard: React.FC<AssessmentCardProps> = ({
           </div>
         </div>
 
-        {/* Sections Preview */}
+        {}
         {assessment.sections && assessment.sections.length > 0 && (
           <div className="mb-6">
             <div className="flex items-center text-xs text-gray-500 mb-2">
@@ -119,7 +119,7 @@ const AssessmentCard: React.FC<AssessmentCardProps> = ({
           </div>
         )}
 
-        {/* Question Types Summary */}
+        {}
         {totalQuestions > 0 && (
           <div className="mb-6">
             <div className="flex items-center text-xs text-gray-500 mb-2">
@@ -144,7 +144,7 @@ const AssessmentCard: React.FC<AssessmentCardProps> = ({
           </div>
         )}
 
-        {/* Actions */}
+        {}
         <div className="flex items-center justify-end pt-4 border-t border-white/20">
           {onEdit && (
             <button
@@ -156,11 +156,11 @@ const AssessmentCard: React.FC<AssessmentCardProps> = ({
           )}
         </div>
 
-        {/* Decorative Elements */}
+        {}
         <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent-gradient rounded-full animate-ping opacity-20"></div>
         <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-secondary-gradient rounded-full opacity-10 animate-float"></div>
         
-        {/* Hover effect overlay */}
+        {}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
       </div>
     </div>

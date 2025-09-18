@@ -53,9 +53,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onEdit, onArchive }) => {
           : 'hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/10'
       }`}>
         
-        {/* Job Header */}
         <div className="mb-4">
-          {/* Status Badge - Top Right */}
           <div className="flex justify-end mb-2">
             <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border ${
               getStatusColor(job.status)
@@ -67,7 +65,6 @@ const JobCard: React.FC<JobCardProps> = ({ job, onEdit, onArchive }) => {
             </span>
           </div>
           
-          {/* Job Info */}
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-primary-gradient rounded-xl flex items-center justify-center animate-pulse-soft flex-shrink-0">
               <BuildingOfficeIcon className="w-6 h-6 text-white" />
@@ -84,14 +81,12 @@ const JobCard: React.FC<JobCardProps> = ({ job, onEdit, onArchive }) => {
           </div>
         </div>
 
-        {/* Job Summary */}
         <div className="mb-3">
           <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
             {job.summary || 'No summary available for this position.'}
           </p>
         </div>
 
-        {/* Tags */}
         <div className="mb-4">
           <div className="flex items-center mb-2">
             <TagIcon className="w-4 h-4 text-gray-400 mr-1" />
@@ -117,7 +112,6 @@ const JobCard: React.FC<JobCardProps> = ({ job, onEdit, onArchive }) => {
           </div>
         </div>
 
-        {/* Actions */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-200 gap-4">
           <div className="flex items-center space-x-3 flex-1">
             <Link
@@ -159,11 +153,9 @@ const JobCard: React.FC<JobCardProps> = ({ job, onEdit, onArchive }) => {
           </button>
         </div>
 
-        {/* Decorative Elements */}
         <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent-gradient rounded-full animate-ping opacity-20"></div>
         <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-secondary-gradient rounded-full opacity-10 animate-float"></div>
         
-        {/* Hover effect overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
       </div>
     </div>

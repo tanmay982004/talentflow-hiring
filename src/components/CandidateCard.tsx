@@ -57,9 +57,9 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onEdit, jobTit
     <div className="group hover-lift">
       <div className="relative bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
         
-        {/* Candidate Header */}
+        {}
         <div className="mb-4">
-          {/* Status Badge - Top Right */}
+          {}
           <div className="flex justify-end mb-2">
             <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border ${getStageColor(candidate.stage)}`}>
               <span className="mr-1">{getStageIcon(candidate.stage)}</span>
@@ -67,7 +67,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onEdit, jobTit
             </span>
           </div>
           
-          {/* Candidate Info */}
+          {}
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-primary-gradient rounded-xl flex items-center justify-center animate-pulse-soft flex-shrink-0">
               <UserIcon className="w-6 h-6 text-white" />
@@ -84,7 +84,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onEdit, jobTit
           </div>
         </div>
 
-        {/* Job Title & Profile */}
+        {}
         <div className="mb-3">
           {jobTitle && (
             <div className="flex items-center text-sm text-gray-600 mb-2">
@@ -99,7 +99,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onEdit, jobTit
           </div>
         </div>
 
-        {/* Timeline Info */}
+        {}
         <div className="mb-4">
           <div className="flex items-center text-xs text-gray-500 mb-2">
             <ClockIcon className="w-3 h-3 mr-1" />
@@ -116,7 +116,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onEdit, jobTit
           </div>
         </div>
 
-        {/* Actions */}
+        {}
         <div className="flex items-center justify-between pt-4 border-t border-gray-200">
           <Link
             to={`/candidates/${candidate.id}`}
@@ -137,11 +137,11 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onEdit, jobTit
           )}
         </div>
 
-        {/* Decorative Elements */}
+        {}
         <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent-gradient rounded-full animate-ping opacity-20"></div>
         <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-secondary-gradient rounded-full opacity-10 animate-float"></div>
         
-        {/* Hover effect overlay */}
+        {}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
       </div>
     </div>

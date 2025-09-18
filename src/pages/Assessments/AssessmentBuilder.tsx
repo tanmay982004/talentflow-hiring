@@ -303,7 +303,7 @@ const AssessmentBuilder: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Header */}
+      {}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link 
@@ -337,7 +337,7 @@ const AssessmentBuilder: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats */}
+      {}
       <div className="grid grid-cols-3 gap-6">
         <div className="glass-strong rounded-xl p-4 border border-white/30 text-center">
           <div className="text-2xl font-bold text-purple-600">
@@ -359,9 +359,9 @@ const AssessmentBuilder: React.FC = () => {
         </div>
       </div>
 
-      {/* Assessment Builder Form */}
+      {}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-        {/* Assessment Title */}
+        {}
         <div className="glass-strong rounded-2xl p-6 border border-white/30">
           <div className="flex items-center mb-4">
             <ClipboardDocumentCheckIcon className="w-5 h-5 text-purple-500 mr-2" />
@@ -385,7 +385,7 @@ const AssessmentBuilder: React.FC = () => {
           </div>
         </div>
 
-        {/* Sections */}
+        {}
         <div className="glass-strong rounded-2xl p-6 border border-white/30">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center">
@@ -430,12 +430,12 @@ const AssessmentBuilder: React.FC = () => {
                   </button>
                 </div>
 
-                {/* Questions in this section */}
+                {}
                 <div className="space-y-4">
                   {watchedSections?.[sectionIndex]?.questions?.map((question, questionIndex) => (
                     <div key={question.id} className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                       <div className="space-y-4">
-                        {/* Question Header */}
+                        {}
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
                             <span className="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-sm font-semibold">
@@ -454,7 +454,7 @@ const AssessmentBuilder: React.FC = () => {
                           </button>
                         </div>
                         
-                        {/* Question Text */}
+                        {}
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">
                             Question Text *
@@ -474,7 +474,7 @@ const AssessmentBuilder: React.FC = () => {
                           )}
                         </div>
                         
-                        {/* Question Settings */}
+                        {}
                         <div className="flex items-center space-x-4">
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -505,7 +505,7 @@ const AssessmentBuilder: React.FC = () => {
                           </div>
                         </div>
                         
-                        {/* Options for choice questions */}
+                        {}
                         {(question.type === 'single-choice' || question.type === 'multi-choice') && (
                           <div className="space-y-3">
                             <div className="flex items-center justify-between">
@@ -564,7 +564,7 @@ const AssessmentBuilder: React.FC = () => {
                           </div>
                         )}
                         
-                        {/* Numeric range settings */}
+                        {}
                         {question.type === 'numeric' && (
                           <div className="space-y-2">
                             <label className="block text-sm font-medium text-gray-700">
@@ -594,7 +594,7 @@ const AssessmentBuilder: React.FC = () => {
                           </div>
                         )}
                         
-                        {/* File upload settings */}
+                        {}
                         {question.type === 'file' && (
                           <div className="space-y-4">
                             <label className="block text-sm font-medium text-gray-700">
@@ -641,7 +641,7 @@ const AssessmentBuilder: React.FC = () => {
                               <label className="text-sm text-gray-700">Allow multiple files</label>
                             </div>
                             
-                            {/* File upload modes */}
+                            {}
                             <div className="space-y-3">
                               <div className="flex items-center justify-between">
                                 <h4 className="text-sm font-medium text-gray-700">Test File Upload</h4>
@@ -723,7 +723,7 @@ const AssessmentBuilder: React.FC = () => {
           </div>
         </div>
 
-        {/* Form Actions */}
+        {}
         <div className="flex items-center justify-end space-x-4 pt-6 border-t border-white/20">
           <Link
             to="/assessments"

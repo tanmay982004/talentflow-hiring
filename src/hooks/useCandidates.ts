@@ -7,7 +7,6 @@ export type CandidatesResponse={
     total:number;
 };
 
-
 export const useCandidates = (params: Record<string, any> = {}) => {
   return useQuery<CandidatesResponse, Error>({
     queryKey: ['candidates', params],

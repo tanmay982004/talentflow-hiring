@@ -201,7 +201,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
         {required && <span className="text-red-500 ml-1">*</span>}
       </label>
 
-      {/* Upload Area */}
+      {}
       <div
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
@@ -252,7 +252,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
         </p>
       )}
 
-      {/* Uploaded Files List */}
+      {}
       {uploadedFiles.length > 0 && (
         <div className="mt-4 space-y-2">
           <h4 className="text-sm font-medium text-gray-700">

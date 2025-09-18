@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Custom CSS Variables for Unique Design System */
 :root {
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -10,7 +9,6 @@
   --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-/* Custom Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -38,7 +36,6 @@
   }
 }
 
-/* Glass morphism utilities */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
@@ -51,7 +48,6 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Custom animations */
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -64,7 +60,6 @@
   animation: pulse-soft 2s ease-in-out infinite;
 }
 
-/* Custom gradient backgrounds */
 .bg-primary-gradient {
   background: var(--primary-gradient);
 }
@@ -81,7 +76,6 @@
   background: var(--dark-gradient);
 }
 
-/* Custom hover effects */
 .hover-lift {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -91,7 +85,6 @@
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

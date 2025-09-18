@@ -113,7 +113,7 @@ const CandidatesListPage: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Hero Section */}
+      {}
       <div className="relative">
         <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
           <div>
@@ -154,10 +154,10 @@ const CandidatesListPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Modern Filters Section */}
+      {}
       <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
         <div className="flex flex-col lg:flex-row gap-4">
-          {/* Search Input */}
+          {}
           <div className="flex-1">
             <label htmlFor="search" className="block text-sm font-semibold text-gray-700 mb-2">Search Candidates</label>
             <div className="relative">
@@ -177,7 +177,7 @@ const CandidatesListPage: React.FC = () => {
             </div>
           </div>
           
-          {/* Stage Filter */}
+          {}
           <div className="w-full lg:w-64">
             <label htmlFor="stageFilter" className="block text-sm font-semibold text-gray-700 mb-2">Filter by Stage</label>
             <select 
@@ -198,14 +198,14 @@ const CandidatesListPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Content */}
+      {}
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="p-6">
           {renderContent()}
         </div>
       </div>
 
-      {/* Add Candidate Modal */}
+      {}
       <AddCandidateModal 
         isOpen={isAddModalOpen} 
         onClose={() => setIsAddModalOpen(false)} 

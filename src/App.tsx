@@ -25,10 +25,10 @@ function App() {
                         <Route path="/assessments/:jobSlug/edit" element={<AssessmentBuilderPage />} />
                         <Route path="/candidates" element={<CandidatesListPage />} />
                         <Route path="/candidates/:candidateId" element={<CandidateProfilePage />} />
-                        {/* The root path now redirects to /jobs */}
+                        {}
                         <Route path="/" element={<Navigate to="/jobs" replace />} />
                     </Route>
-                    {/* You can add non-layout routes here if needed, e.g., a login page */}
+                    {}
                     <Route path="*" element={<Navigate to="/jobs" replace />} />
                 </Routes>
             </BrowserRouter>

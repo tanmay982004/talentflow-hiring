@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo } from 'react';
 import { DndContext, DragOverlay, closestCorners, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import type { Candidate, Stage } from '../types';
@@ -112,7 +111,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ initialCandidates, onCandidat
           />
         ))}
       </div>
-      {/* DragOverlay renders a portal, showing the dragged item without layout shifts */}
+      {}
       <DragOverlay>
         {activeCandidate ? <CandidateCard candidate={activeCandidate} /> : null}
       </DragOverlay>

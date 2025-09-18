@@ -112,13 +112,13 @@ const UpdateStageModal: React.FC<UpdateStageModalProps> = ({ isOpen, onClose, ca
   return (
     <Modal isOpen={isOpen} onClose={handleClose} title="Update Candidate Stage">
       <div className="space-y-6">
-        {/* Candidate Info */}
+        {}
         <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
           <h3 className="font-semibold text-gray-900 mb-2">{candidate.name}</h3>
           <p className="text-sm text-gray-600">{candidate.email}</p>
         </div>
 
-        {/* Stage Transition Preview */}
+        {}
         <div className="flex items-center justify-center space-x-4 py-4">
           <div className={`inline-flex items-center px-3 py-2 rounded-xl text-sm font-semibold border ${getStageColor(candidate.stage)}`}>
             <span className="mr-1">{getStageIcon(candidate.stage)}</span>
@@ -132,7 +132,7 @@ const UpdateStageModal: React.FC<UpdateStageModalProps> = ({ isOpen, onClose, ca
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {/* New Stage Selection */}
+          {}
           <div>
             <label htmlFor="newStage" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
               <SparklesIcon className="w-4 h-4 mr-2 text-purple-500" />
@@ -154,7 +154,7 @@ const UpdateStageModal: React.FC<UpdateStageModalProps> = ({ isOpen, onClose, ca
             )}
           </div>
 
-          {/* Notes Field */}
+          {}
           <div>
             <label htmlFor="note" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
               <ChatBubbleLeftEllipsisIcon className="w-4 h-4 mr-2 text-purple-500" />
@@ -172,7 +172,7 @@ const UpdateStageModal: React.FC<UpdateStageModalProps> = ({ isOpen, onClose, ca
             </div>
           </div>
 
-          {/* Warning for certain stage changes */}
+          {}
           {(newStage === 'rejected' || newStage === 'hired') && (
             <div className={`p-4 rounded-xl border ${
               newStage === 'rejected' 
@@ -198,7 +198,7 @@ const UpdateStageModal: React.FC<UpdateStageModalProps> = ({ isOpen, onClose, ca
             </div>
           )}
 
-          {/* Form Actions */}
+          {}
           <div className="flex items-center justify-end space-x-3 pt-4 border-t border-gray-200">
             <button
               type="button"

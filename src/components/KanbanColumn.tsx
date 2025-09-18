@@ -22,7 +22,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({ stage, candidates }) => {
         </span>
       </h3>
 
-      {/* This context tells dnd-kit what items are in this column */}
+      {}
       <SortableContext
         id={stage}
         items={candidates.map(c => c.id)}

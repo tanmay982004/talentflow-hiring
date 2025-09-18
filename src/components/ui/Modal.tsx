@@ -13,17 +13,17 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
 
   return (
     <div className="fixed inset-0 z-[9999] overflow-y-auto">
-      {/* Backdrop */}
+      {}
       <div 
         className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       ></div>
       
-      {/* Modal */}
+      {}
       <div className="flex min-h-full items-start justify-center p-4 pt-20 sm:pt-24">
         <div className="relative w-full max-w-md animate-slide-in-up">
           <div className="bg-white rounded-2xl border border-gray-200 shadow-xl">
-            {/* Header */}
+            {}
             <div className="flex items-center justify-between p-4 border-b border-gray-200">
               <div>
                 <h2 className="text-xl font-bold text-gray-900">{title}</h2>
@@ -40,7 +40,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
               </button>
             </div>
             
-            {/* Content */}
+            {}
             <div className="p-4">
               {children}
             </div>

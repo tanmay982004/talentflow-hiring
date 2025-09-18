@@ -105,13 +105,11 @@ const AssessmentsPage: React.FC = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [wrapperRef]);
 
-
   const handleEditAssessment = (assessment: Assessment) => {
     const job = jobsData?.items.find(job => job.id === assessment.jobId);
     const jobSlug = job?.slug || assessment.jobId;
     navigate(`/assessments/${jobSlug}/edit`);
   };
-
 
   const handleClearJobFilter = () => {
     setSearchParams({});
@@ -125,7 +123,7 @@ const AssessmentsPage: React.FC = () => {
 
   const renderSearchMode = () => (
     <div className="space-y-6">
-      {/* Search Section */}
+      {}
       <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
         <div className="flex items-center mb-4">
           <MagnifyingGlassIcon className="w-5 h-5 text-purple-500 mr-2" />
@@ -162,7 +160,7 @@ const AssessmentsPage: React.FC = () => {
             />
           </div>
 
-          {/* Dropdown */}
+          {}
           {isDropdownOpen && (
             <div className="absolute z-20 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-2xl max-h-80 overflow-y-auto">
               {isLoading ? (
@@ -236,7 +234,7 @@ const AssessmentsPage: React.FC = () => {
 
   const renderGridMode = () => (
     <div className="space-y-6">
-      {/* Navigation Header */}
+      {}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           {jobParam ? (
@@ -260,7 +258,7 @@ const AssessmentsPage: React.FC = () => {
           )}
         </div>
         
-        {/* Job Info */}
+        {}
         {currentJob && (
           <div className="text-right">
             <div className="text-sm text-gray-500">Assessments for</div>
@@ -269,7 +267,7 @@ const AssessmentsPage: React.FC = () => {
         )}
       </div>
 
-      {/* Assessments Grid */}
+      {}
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="p-6">
           {assessmentsLoading ? (
@@ -344,7 +342,7 @@ const AssessmentsPage: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Hero Section */}
+      {}
       <div className="relative">
         <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
           <div>
@@ -388,7 +386,7 @@ const AssessmentsPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Content */}
+      {}
       {viewMode === 'search' ? renderSearchMode() : renderGridMode()}
     </div>
   );

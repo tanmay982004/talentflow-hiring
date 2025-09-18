@@ -89,7 +89,7 @@ const CandidateProfilePage: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Back Button */}
+      {}
       <Link 
         to="/candidates" 
         className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-300 text-gray-600 hover:text-purple-600 hover:border-purple-300 transition-all duration-200"
@@ -98,7 +98,7 @@ const CandidateProfilePage: React.FC = () => {
         Back to Candidates
       </Link>
 
-      {/* Candidate Header */}
+      {}
       <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
         <div>
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
@@ -116,7 +116,7 @@ const CandidateProfilePage: React.FC = () => {
                   <span className="text-lg">{candidate.email}</span>
                 </div>
                 
-                {/* Job & Stage Info */}
+                {}
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center bg-gray-50 rounded-lg px-4 py-2 border border-gray-200">
                     <BriefcaseIcon className="h-5 w-5 mr-2 text-purple-500" />
@@ -149,7 +149,7 @@ const CandidateProfilePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Profile Section */}
+      {}
       <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
         <div className="flex items-center mb-4">
           <UserIcon className="w-5 h-5 text-purple-500 mr-2" />
@@ -162,7 +162,7 @@ const CandidateProfilePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Timeline Section */}
+      {}
       <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
         <div className="flex items-center mb-6">
           <ClockIcon className="w-5 h-5 text-purple-500 mr-2" />
@@ -241,7 +241,7 @@ const CandidateProfilePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Update Stage Modal */}
+      {}
       <UpdateStageModal 
         isOpen={isUpdateStageModalOpen} 
         onClose={() => setIsUpdateStageModalOpen(false)} 

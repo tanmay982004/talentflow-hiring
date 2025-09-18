@@ -57,7 +57,7 @@ const FileUploadPreview: React.FC<FileUploadPreviewProps> = ({
         )}
       </div>
       
-      {/* File type examples */}
+      {}
       {fileTypes && (
         <div className="mt-3 pt-3 border-t border-gray-200">
           <p className="text-xs text-gray-400">

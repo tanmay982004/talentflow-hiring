@@ -2,7 +2,6 @@ import {http, HttpResponse} from 'msw';
 import {db} from '../../db/dexie';
 import type {Assessment,Job,Candidate,Stage} from '../../types';
 
-
 const randomLatency = (min=200,max=1200) => new Promise((r)=> setTimeout((r),Math.floor(Math.random()*(max-min)+min)));
 const randomFailure = (rate=0.06) => Math.random()<rate;
 
