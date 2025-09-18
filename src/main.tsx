@@ -10,52 +10,54 @@ async function startApp() {
   try {
     console.log('Starting app...');
     
-    if (import.meta.env.DEV) {
-      console.log('Development mode detected');
+    // Initialize MSW for both development and production
+    console.log('Environment mode:', import.meta.env.DEV ? 'development' : 'production');
+    
+    try{
+      console.log('Initializing MSW...');
       
-      try{
-        console.log('Initializing MSW...');
-        
-        // Clear any problematic cookies that might cause MSW to fail
+      // Clear any problematic cookies that might cause MSW to fail (only in development)
+      if (import.meta.env.DEV) {
         try {
-          // Clear cookies for localhost to avoid MSW cookie parsing issues
           document.cookie.split(";").forEach(function(c) { 
             document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
           });
         } catch (e) {
           console.warn('Could not clear cookies:', e);
         }
-        
-        const {worker} = await import('./api/msw/browser');
-        await worker.start({
-          onUnhandledRequest(request, print) {
-            if (request.url.includes('/api/')) {
-              print.warning();
-              return;
-            }
-          },
-          // Disable service worker quiet mode to catch errors
-          quiet: false,
-        });
-        
-        await sleep(100);
-        console.log('MSW started successfully');
-      } catch(err){
-        console.warn('MSW failed to start:', err);
-        // If MSW fails, we can still continue with the app
-        console.warn('App will continue without MSW - API calls may fail');
-      }
-
-      try {
-        console.log('Seeding database...');
-        const { seedDB } = await import('./db/seed');
-        await seedDB();
-        console.log('Database seeded successfully');
-      } catch (err) {
-        console.error('Seeding failed:', err);
       }
       
-      // Load migration tools for development
+      const {worker} = await import('./api/msw/browser');
+      await worker.start({
+        onUnhandledRequest(request, print) {
+          if (request.url.includes('/api/')) {
+            print.warning();
+            return;
+          }
+        },
+        // Use quiet mode in production to reduce console noise
+        quiet: !import.meta.env.DEV,
+      });
+      
+      await sleep(100);
+      console.log('MSW started successfully');
+    } catch(err){
+      console.warn('MSW failed to start:', err);
+      // If MSW fails, we can still continue with the app
+      console.warn('App will continue without MSW - API calls may fail');
+    }
+
+    try {
+      console.log('Seeding database...');
+      const { seedDB } = await import('./db/seed');
+      await seedDB();
+      console.log('Database seeded successfully');
+    } catch (err) {
+      console.error('Seeding failed:', err);
+    }
+    
+    // Load migration tools only in development
+    if (import.meta.env.DEV) {
       try {
         await import('./utils/migrateDatabase');
         console.log('Migration tools available in console as migrationTools');
