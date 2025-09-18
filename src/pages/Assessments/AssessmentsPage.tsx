@@ -156,7 +156,7 @@ const AssessmentsPage: React.FC = () => {
               value={searchTerm}
               onChange={handleSearchChange}
               onFocus={() => setIsDropdownOpen(true)}
-              placeholder={isLoading ? 'Loading jobs...' : 'e.g., Senior Frontend Developer'}
+              placeholder={isLoading ? 'Loading available positions...' : 'Search positions: Frontend Developer, Product Manager, etc.'}
               className="border border-gray-300 rounded-lg pl-10 pr-4 py-3 w-full focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200"
               autoComplete="off"
             />

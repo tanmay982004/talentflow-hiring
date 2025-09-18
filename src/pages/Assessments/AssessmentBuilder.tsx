@@ -377,7 +377,7 @@ const AssessmentBuilder: React.FC = () => {
               id="title"
               {...register('title', { required: 'Assessment title is required' })}
               className="glass border border-white/30 rounded-xl px-4 py-3 w-full focus:border-purple-300 focus:ring-2 focus:ring-purple-200 transition-all duration-200"
-              placeholder="e.g., Frontend Developer Technical Assessment"
+              placeholder="e.g., Senior React Developer Skills Assessment"
             />
             {errors.title && (
               <p className="mt-1 text-sm text-red-600">{errors.title.message}</p>
@@ -416,7 +416,7 @@ const AssessmentBuilder: React.FC = () => {
                         required: 'Section title is required' 
                       })}
                       className="text-lg font-semibold bg-transparent border-none focus:outline-none focus:ring-0 text-gray-900"
-                      placeholder="Section Title"
+                      placeholder="e.g., Technical Skills, Problem Solving, Experience"
                     />
                   </div>
                   
@@ -465,7 +465,7 @@ const AssessmentBuilder: React.FC = () => {
                             })}
                             rows={2}
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
-                            placeholder="Enter your question here..."
+                            placeholder="e.g., Describe your experience with React hooks and state management..."
                           />
                           {errors.sections?.[sectionIndex]?.questions?.[questionIndex]?.label && (
                             <p className="mt-1 text-sm text-red-600">
@@ -533,7 +533,7 @@ const AssessmentBuilder: React.FC = () => {
                                       required: 'Option text is required'
                                     })}
                                     className="flex-1 px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                    placeholder={`Option ${optionIndex + 1}`}
+                                    placeholder={`e.g., 5+ years experience, Advanced level, etc.`}
                                   />
                                   <button
                                     type="button"
@@ -577,7 +577,7 @@ const AssessmentBuilder: React.FC = () => {
                                   type="number"
                                   {...register(`sections.${sectionIndex}.questions.${questionIndex}.min` as const, { valueAsNumber: true })}
                                   className="w-20 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                  placeholder="0"
+                                  placeholder="1"
                                 />
                               </div>
                               <span className="text-gray-400 mt-5">to</span>
@@ -587,7 +587,7 @@ const AssessmentBuilder: React.FC = () => {
                                   type="number"
                                   {...register(`sections.${sectionIndex}.questions.${questionIndex}.max` as const, { valueAsNumber: true })}
                                   className="w-20 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                  placeholder="100"
+                                  placeholder="10"
                                 />
                               </div>
                             </div>
@@ -610,7 +610,7 @@ const AssessmentBuilder: React.FC = () => {
                                   type="text"
                                   {...register(`sections.${sectionIndex}.questions.${questionIndex}.fileTypes` as const)}
                                   className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                  placeholder="e.g., .pdf,.doc,.docx,.jpg,.png"
+                                  placeholder="e.g., .pdf,.doc,.docx (for resumes, portfolios)"
                                 />
                                 <p className="mt-1 text-xs text-gray-400">
                                   Separate multiple types with commas
@@ -625,7 +625,7 @@ const AssessmentBuilder: React.FC = () => {
                                   type="number"
                                   {...register(`sections.${sectionIndex}.questions.${questionIndex}.maxFileSize` as const, { valueAsNumber: true })}
                                   className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                  placeholder="10"
+                                  placeholder="5"
                                   min="1"
                                   max="100"
                                 />
