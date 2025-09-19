@@ -11,7 +11,7 @@ export const handlers=[
             await randomLatency();
             const url = new URL(request.url);
             const page = Number(url.searchParams.get('page')||'1');
-            const pageSize = Number(url.searchParams.get('pageSize') || '9');
+            const pageSize = Number(url.searchParams.get('pageSize') || '8');
             const search = (url.searchParams.get('search') || '').toLowerCase();
             const status = url.searchParams.get('status') || '';
 

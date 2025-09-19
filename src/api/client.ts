@@ -56,7 +56,7 @@ export async function client(path: string, options: ClientOptions = {}) {
   // If the response is OK but is not JSON (i.e., it's the HTML fallback),
   // we throw a specific, helpful error instead of crashing.
   if (!contentType || !contentType.includes('application/json')) {
-    throw new Error("MSW interception failed: Received a non-JSON response. This is a development-only error.");
+    throw new Error("Couldn't Fetch data");
   }
   // --- END OF FIX ---
 

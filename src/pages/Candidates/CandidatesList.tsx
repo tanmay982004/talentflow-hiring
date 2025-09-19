@@ -93,7 +93,7 @@ const CandidatesListPage: React.FC = () => {
 
     return (
       <div className="animate-slide-in-up">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredCandidates.map((candidate, index) => (
             <div 
               key={candidate.id} 
@@ -146,7 +146,7 @@ const CandidatesListPage: React.FC = () => {
                 className="inline-flex items-center gap-3 px-6 py-3 bg-primary-gradient text-white font-semibold rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 hover:shadow-purple-500/25"
               >
                 <PlusIcon className="h-5 w-5" />
-                Add Candidate
+                Recruit Talent
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
               </button>
             </div>

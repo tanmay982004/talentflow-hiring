@@ -5,102 +5,102 @@ import { nanoid } from 'nanoid';
 // --- NEW: Realistic Data Arrays ---
 
 const FIRST_NAMES = [
-  "Aisha", "Ben", "Chloe", "David", "Eva", "Frank", "Grace", "Henry", "Isla", "Jack",
-  "Kara", "Leo", "Mia", "Noah", "Olivia", "Paul", "Quinn", "Ruby", "Sam", "Tara",
-  "Umar", "Violet", "Will", "Xena", "Yara", "Zayn", "Liam", "Emma", "Sophia", "James",
-  "Lucas", "Ava", "Mason", "Zoe", "Ethan", "Lily", "Elijah", "Hannah", "Logan", "Nora"
+  "Aarav", "Advait", "Ananya", "Arjun", "Diya", "Ishaan", "Kavya", "Kiran", "Meera", "Nikhil",
+  "Priya", "Ravi", "Sahana", "Tanvi", "Vikram", "Aditi", "Aryan", "Bhavna", "Deepak", "Esha",
+  "Gaurav", "Hiral", "Jai", "Komal", "Lakshmi", "Mohan", "Neha", "Om", "Pooja", "Rahul",
+  "Shreya", "Tejas", "Uma", "Varun", "Yash", "Zara", "Aditya", "Bina", "Chetan", "Divya"
 ];
 
 const LAST_NAMES = [
-  "Khan", "Smith", "Chen", "Williams", "Garcia", "Jones", "Rodriguez", "Lee", "Patel", "Brown",
-  "Miller", "Davis", "Wilson", "Taylor", "Clark", "Hall", "Allen", "Young", "Walker", "Scott",
-  "Adams", "Baker", "Carter", "Evans", "Green", "Hill", "Jackson", "King", "Lewis", "Martin",
-  "Moore", "Nelson", "Parker", "Roberts", "Turner", "White", "Harris", "Thompson", "Wright", "Cooper"
+  "Sharma", "Patel", "Singh", "Kumar", "Gupta", "Agarwal", "Joshi", "Shah", "Mehta", "Reddy",
+  "Iyer", "Nair", "Rao", "Verma", "Kulkarni", "Desai", "Pillai", "Banerjee", "Sinha", "Mishra",
+  "Tiwari", "Pandey", "Malhotra", "Chopra", "Kapoor", "Saxena", "Jain", "Agnihotri", "Bhatt", "Chandra",
+  "Dutta", "Goyal", "Khanna", "Mahajan", "Sethi", "Thakur", "Varma", "Yadav", "Bose", "Ghosh"
 ];
 
 // This can be pasted directly into your seed.ts file
 
 const JOB_DATA = [
-    { title: "Senior Frontend Engineer (React)", tags: ['frontend', 'react'], summary: "Lead our frontend team in building next-generation user interfaces with React and TypeScript. You will be responsible for major architectural decisions, mentoring junior developers, and ensuring the performance and scalability of our web applications." },
-    { title: "Lead Backend Developer (Node.js)", tags: ['backend', 'nodejs'], summary: "Design and implement robust, scalable backend services using Node.js, GraphQL, and microservices architecture. A deep understanding of database design, cloud deployment on AWS, and API security is essential for this role." },
-    { title: "UX/UI Designer", tags: ['design'], summary: "Create intuitive, elegant, and beautiful user experiences across our entire suite of products. You will work from user research and wireframing through to high-fidelity mockups and prototyping. A strong portfolio is required." },
-    { title: "Senior Product Manager", tags: ['management', 'product'], summary: "Own the product roadmap for our core platform. You will conduct market research, write detailed specifications, and work closely with engineering and design to deliver features that provide immense value to our users." },
-    { title: "DevOps Specialist (Kubernetes)", tags: ['devops', 'cloud'], summary: "Automate our entire CI/CD pipeline and manage our containerized infrastructure on Kubernetes. Experience with Docker, Helm, Prometheus, and Terraform is highly valued for this critical role in our platform team." },
-    { title: "QA Automation Engineer (Cypress)", tags: ['qa'], summary: "Develop and execute a comprehensive automated testing strategy to ensure the quality and reliability of our products. You will be writing end-to-end tests, building testing frameworks, and championing quality across the engineering org." },
-    { title: "Junior Full Stack Developer", tags: ['frontend', 'backend'], summary: "Join our dynamic team as a versatile full-stack developer. You'll work with a modern stack including React, Node.js, and PostgreSQL, contributing to all parts of the product. This is a great opportunity to learn and grow." },
-    { title: "Lead Data Scientist (Python/ML)", tags: ['data'], summary: "Analyze large, complex datasets to extract meaningful insights and build predictive models that drive key business decisions. A PhD or Master's in a quantitative field and proficiency in Python, SQL, and ML libraries is required." },
-    { title: "Engineering Manager", tags: ['management'], summary: "Lead, mentor, and grow a team of talented software engineers. You will be responsible for ensuring timely project delivery, fostering a positive and collaborative team culture, and guiding the career development of your direct reports." },
-    { title: "Cloud Infrastructure Engineer", tags: ['cloud', 'devops'], summary: "Architect, build, and manage secure, scalable, and cost-effective cloud environments on AWS and GCP. You will be responsible for our VPCs, IAM policies, and infrastructure-as-code practices." },
-    { title: "Mobile Developer (React Native)", tags: ['mobile', 'frontend'], summary: "Develop and maintain our cross-platform mobile application using React Native. You will work to deliver a consistent and high-quality experience for both our iOS and Android users." },
-    { title: "Technical Project Manager", tags: ['management'], summary: "Coordinate and manage complex, cross-functional technical projects from inception to completion. Strong organizational skills and the ability to communicate effectively with both technical and non-technical stakeholders are key." },
-    { title: "Information Security Engineer", tags: ['security'], summary: "Protect our systems and customer data by designing and implementing security controls, performing vulnerability assessments, and responding to security incidents. A deep understanding of network and application security is required." },
-    { title: "Senior Backend Engineer (Go)", tags: ['backend', 'golang'], summary: "Join our high-performance backend team to build critical services in Go. We value performance, concurrency, and robust error handling. Experience with gRPC and distributed systems is a major plus." },
-    { title: "Mid-Level Frontend Developer (Vue.js)", tags: ['frontend', 'vuejs'], summary: "We are looking for a skilled Vue.js developer to help build and maintain our customer-facing dashboard. You should have a strong grasp of modern JavaScript, CSS, and component-based architecture." },
-    { title: "Principal Product Designer", tags: ['design', 'management'], summary: "Set the vision for the user experience across the entire company. You will lead major design initiatives, mentor other designers, and represent the voice of the user at the highest levels of the organization." },
-    { title: "Senior Site Reliability Engineer (SRE)", tags: ['devops', 'cloud'], summary: "Ensure our platform is reliable, scalable, and performant. You will be responsible for monitoring, SLOs/SLIs, incident management, and building automation to eliminate toil." },
-    { title: "Database Administrator (PostgreSQL)", tags: ['backend', 'data'], summary: "Manage, optimize, and ensure the reliability of our mission-critical PostgreSQL database clusters. Responsibilities include performance tuning, backup and recovery, and schema management." },
-    { title: "Android Developer (Kotlin)", tags: ['mobile', 'android'], summary: "Build and maintain our native Android application using Kotlin and the latest Android Jetpack libraries. A passion for mobile UX and performance is a must." },
-    { title: "Data Engineer (Spark/ETL)", tags: ['data'], summary: "Design, build, and maintain our data pipelines and ETL processes using technologies like Apache Spark and Airflow. You will ensure data is clean, reliable, and available for our data science team." },
-    { title: "Solutions Architect", tags: ['cloud', 'management'], summary: "Work with our enterprise customers to design and implement solutions on our platform. This role requires a strong technical background and excellent client-facing communication skills." },
-    { title: "UX Researcher", tags: ['design'], summary: "Conduct qualitative and quantitative research to understand user behaviors, needs, and motivations. Your insights will directly shape the future of our product." },
-    { title: "Technical Writer", tags: ['documentation'], summary: "Create clear, concise, and comprehensive documentation for our developer APIs and user-facing products. You will be a key part of making our products easy to use." },
-    { title: "Lead QA Engineer", tags: ['qa', 'management'], summary: "Lead our QA team, define our testing strategy, and be the ultimate gatekeeper for product quality. This role requires both technical and leadership skills." },
-    { title: "IT Support Specialist", tags: ['it'], summary: "Provide internal IT support to our growing team. Responsibilities include onboarding new employees, managing hardware and software, and troubleshooting network issues." },
-    { title: "Digital Marketing Manager", tags: ['marketing'], summary: "Develop and execute our digital marketing campaigns across all channels, including SEO, SEM, and social media. A data-driven mindset is essential." },
-    { title: "Content Marketing Strategist", tags: ['marketing', 'documentation'], summary: "Create compelling content, including blog posts, white papers, and case studies, to attract and engage our target audience. Excellent writing skills are a must." },
-    { title: "Senior Security Analyst", tags: ['security'], summary: "Analyze and respond to security alerts, conduct threat hunting, and help mature our security operations center (SOC). Experience with SIEM and EDR tools is required." },
-    { title: "Machine Learning Engineer", tags: ['data'], summary: "Design, build, and deploy machine learning models into production. You will work on a variety of projects, from recommendation engines to fraud detection systems." },
-    { title: "Agile Coach / Scrum Master", tags: ['management'], summary: "Guide our engineering teams in Agile and Scrum best practices. You will facilitate ceremonies, remove impediments, and help teams continuously improve their processes." }
+    { title: "Principal Frontend Architect (React/Next.js)", tags: ['frontend', 'react'], summary: "Architect and lead the development of our next-generation fintech platform using React 18, Next.js 14, and modern state management. Drive technical excellence across multiple product teams while establishing frontend standards and best practices." },
+    { title: "Staff Backend Engineer (Golang/Microservices)", tags: ['backend', 'golang'], summary: "Build high-performance, distributed systems using Go, gRPC, and event-driven architecture. Lead the design of scalable APIs serving 100M+ requests daily while ensuring reliability and security across our payment processing infrastructure." },
+    { title: "Senior Product Designer (AI/ML Interfaces)", tags: ['design'], summary: "Design innovative user experiences for AI-powered features in our healthcare platform. Collaborate with ML engineers to make complex algorithms accessible through intuitive interfaces, focusing on accessibility and inclusive design principles." },
+    { title: "VP of Product Strategy", tags: ['management', 'product'], summary: "Define and execute product vision for our B2B SaaS platform serving enterprise clients. Lead cross-functional teams to drive product-market fit, analyze user behavior, and establish data-driven decision making processes across the organization." },
+    { title: "Senior Platform Engineer (Kubernetes/Service Mesh)", tags: ['devops', 'cloud'], summary: "Build and maintain our cloud-native infrastructure using Kubernetes, Istio service mesh, and GitOps practices. Drive platform reliability and developer experience through automation, monitoring, and zero-downtime deployment strategies." },
+    { title: "Principal QA Engineer (Test Automation)", tags: ['qa'], summary: "Lead our quality engineering transformation by building comprehensive test automation frameworks using Playwright, K6, and custom testing tools. Establish quality gates and metrics that ensure exceptional user experience across all touchpoints." },
+    { title: "Mid-Level Full Stack Engineer (TypeScript)", tags: ['frontend', 'backend'], summary: "Develop end-to-end features using TypeScript, React, Node.js, and PostgreSQL in our edtech platform. Collaborate with product and design teams to build engaging learning experiences for students and educators worldwide." },
+    { title: "Senior ML Engineer (Computer Vision)", tags: ['data'], summary: "Design and deploy computer vision models for our autonomous vehicle platform. Work with massive datasets, implement real-time inference pipelines, and collaborate with robotics engineers to bring cutting-edge AI solutions to production." },
+    { title: "Director of Engineering (Growth Team)", tags: ['management'], summary: "Lead a cross-functional engineering team focused on user acquisition, conversion, and retention. Drive technical strategy for A/B testing infrastructure, recommendation systems, and personalization features that impact millions of users daily." },
+    { title: "Senior Cloud Security Architect", tags: ['cloud', 'security'], summary: "Design and implement comprehensive security controls across our multi-cloud infrastructure. Lead zero-trust architecture initiatives, compliance programs (SOC 2, PCI DSS), and security incident response for our financial services platform." },
+    { title: "Native Mobile Developer (Flutter)", tags: ['mobile', 'flutter'], summary: "Build beautiful, performant mobile applications using Flutter and Dart. Focus on creating seamless offline experiences, implementing biometric authentication, and optimizing for emerging mobile platforms and foldable devices." },
+    { title: "Senior Program Manager (AI Platform)", tags: ['management'], summary: "Drive strategic initiatives across our AI/ML platform team. Coordinate between research, engineering, and product teams to bring cutting-edge machine learning capabilities to market while ensuring ethical AI practices." },
+    { title: "Lead Security Engineer (Zero Trust)", tags: ['security'], summary: "Implement zero-trust security architecture across our cloud infrastructure. Lead threat modeling, security code reviews, and incident response while building security automation tools that protect our global user base of 50M+ customers." },
+    { title: "Senior Blockchain Developer (Go/Solidity)", tags: ['backend', 'blockchain'], summary: "Develop secure, high-performance blockchain applications using Go and Solidity. Build DeFi protocols, smart contract auditing tools, and Layer 2 scaling solutions for our next-generation cryptocurrency exchange platform." },
+    { title: "Frontend Engineer (Vue.js/Nuxt.js)", tags: ['frontend', 'vuejs'], summary: "Create responsive, accessible web applications using Vue 3, Nuxt.js, and TypeScript. Focus on server-side rendering, performance optimization, and building reusable component libraries for our content management platform." },
+    { title: "Head of Product Design", tags: ['design', 'management'], summary: "Lead design strategy for our multi-product ecosystem. Establish design systems, manage a team of 15+ designers, and drive user-centered design practices that have increased user satisfaction scores by 40% year-over-year." },
+    { title: "Staff Site Reliability Engineer (Observability)", tags: ['devops', 'sre'], summary: "Build world-class observability and reliability practices for our 99.99% uptime SaaS platform. Lead incident response, chaos engineering, and capacity planning while mentoring junior SREs across multiple product teams." },
+    { title: "Senior Database Engineer (Distributed Systems)", tags: ['backend', 'data'], summary: "Architect and optimize distributed database systems handling petabytes of data. Focus on sharding strategies, replication, and performance optimization for our real-time analytics platform serving Fortune 500 companies." },
+    { title: "Senior Android Engineer (Jetpack Compose)", tags: ['mobile', 'android'], summary: "Lead Android development using Kotlin, Jetpack Compose, and modern Android architecture. Build innovative social features, implement advanced camera capabilities, and optimize for battery life and performance across diverse device ecosystems." },
+    { title: "Principal Data Engineer (Real-time Streaming)", tags: ['data', 'streaming'], summary: "Design and implement real-time data processing systems using Apache Kafka, Flink, and ClickHouse. Build data infrastructure supporting ML model training and real-time personalization for our recommendation engine." },
+    { title: "Enterprise Solutions Architect", tags: ['cloud', 'enterprise'], summary: "Partner with Fortune 1000 clients to architect scalable solutions on our platform. Lead technical sales engagements, design custom integrations, and ensure successful enterprise deployments across complex multi-cloud environments." },
+    { title: "Senior UX Researcher (Behavioral Analytics)", tags: ['design', 'research'], summary: "Lead user research initiatives combining qualitative methods with advanced analytics. Design and execute research studies that inform product strategy, using tools like Hotjar, FullStory, and custom data analysis to drive user-centered decisions." },
+    { title: "Developer Experience Engineer", tags: ['documentation', 'developer'], summary: "Build exceptional developer experiences through comprehensive documentation, interactive tutorials, and developer tools. Create SDKs, code samples, and onboarding flows that help developers integrate with our APIs successfully." },
+    { title: "QA Engineering Manager", tags: ['qa', 'management'], summary: "Lead a team of 12+ QA engineers while establishing testing excellence across our organization. Drive automation strategies, quality metrics, and cross-team collaboration to ensure product quality at scale." },
+    { title: "Senior IT Infrastructure Engineer", tags: ['it', 'infrastructure'], summary: "Manage enterprise IT infrastructure for our 500+ person organization. Lead migrations to cloud-based solutions, implement zero-trust networking, and ensure 99.9% uptime for critical business systems and developer tools." },
+    { title: "Growth Marketing Lead (Performance)", tags: ['marketing', 'growth'], summary: "Drive user acquisition and revenue growth through data-driven marketing campaigns. Own our marketing funnel optimization, A/B testing strategy, and paid acquisition channels with $2M+ monthly ad spend." },
+    { title: "Technical Content Strategist", tags: ['marketing', 'technical'], summary: "Create technical content that educates and engages our developer community. Write in-depth tutorials, case studies, and thought leadership pieces that showcase our platform capabilities and drive developer adoption." },
+    { title: "Principal Security Researcher", tags: ['security', 'research'], summary: "Lead advanced threat research and vulnerability discovery initiatives. Develop novel security testing methodologies, contribute to open-source security tools, and represent the company at major security conferences and research publications." },
+    { title: "Senior ML Platform Engineer", tags: ['data', 'platform'], summary: "Build and scale our machine learning infrastructure supporting 100+ ML models in production. Develop MLOps pipelines, model versioning systems, and automated retraining workflows using Kubeflow and MLflow." },
+    { title: "Engineering Excellence Coach", tags: ['management', 'coaching'], summary: "Drive engineering excellence across our organization through coaching, process improvement, and cultural transformation. Lead initiatives in code quality, testing practices, and developer productivity metrics." }
 ];
 
 const CANDIDATE_PROFILES = {
   frontend: [
-    "Experienced React developer with 5+ years building complex, scalable frontend applications. Deeply passionate about clean code, component architecture, and user experience.", 
-    "A Vue.js enthusiast with a strong eye for UI/UX details and a proven track record of delivering pixel-perfect, responsive interfaces from Figma designs.", 
-    "Junior frontend developer with a solid foundation in HTML, CSS, and modern TypeScript. A recent bootcamp graduate who is extremely eager to learn and contribute to a fast-paced team.",
-    "Frontend specialist with expertise in performance optimization, reducing load times and improving Core Web Vitals for large-scale applications."
+    "Seasoned React.js developer with 6+ years crafting immersive user interfaces for fintech platforms. Expert in Next.js, Redux Toolkit, and micro-frontend architecture with a focus on accessibility standards.", 
+    "Angular specialist with deep expertise in RxJS and NgRx state management. Successfully migrated legacy systems to modern Angular versions while maintaining backward compatibility.", 
+    "Vue 3 Composition API expert with strong background in Nuxt.js and headless CMS integration. Passionate about creating delightful user experiences with smooth animations and transitions.",
+    "Full-stack frontend engineer specializing in React Native and PWA development. Built cross-platform applications serving millions of users across e-commerce and healthcare domains."
   ],
   backend: [
-    "Senior backend engineer with over 8 years of expertise in Node.js, Go, and building highly available distributed systems. Strong background in database design, API security, and optimization.", 
-    "Full-stack engineer with a strong backend focus, skilled in building and deploying scalable microservices on AWS using Docker and Kubernetes.", 
-    "Mid-level developer with 3 years of experience in Python (Django/Flask) and a passion for creating clean, well-documented RESTful APIs.",
-    "A pragmatic Java developer with experience in the Spring ecosystem, focused on writing reliable and maintainable enterprise-grade code."
+    "Senior backend architect with 9+ years in Node.js, Golang, and Python. Designed event-driven microservices handling 10M+ requests/day with expertise in Apache Kafka, Redis, and MongoDB.", 
+    "Cloud-native backend engineer specializing in serverless architecture on AWS Lambda and Azure Functions. Expert in GraphQL federation and gRPC services with strong DevSecOps practices.", 
+    "Python Django expert with 5 years building robust APIs for fintech applications. Experienced in implementing OAuth2, JWT authentication, and PCI-compliant payment processing systems.",
+    "Java Spring Boot specialist focused on enterprise-grade applications. Built scalable banking systems with strong emphasis on transaction integrity and regulatory compliance."
   ],
   design: [
-    "Creative and empathetic UX/UI designer with a focus on user-centered design principles. Highly skilled in Figma, Sketch, and conducting user research and usability testing.", 
-    "Lead product designer with a stunning portfolio of successful mobile and web applications. An expert in bridging the gap between user needs and business goals.", 
-    "Visual designer with a passion for branding, illustration, and creating beautiful, consistent, and accessible design systems from the ground up."
+    "Senior UX researcher and designer with 7+ years creating intuitive interfaces for healthcare and educational technology. Expert in design systems, user journey mapping, and inclusive design principles.", 
+    "Product designer specializing in B2B SaaS platforms with focus on data visualization and complex workflows. Proficient in Figma, Adobe Creative Suite, and prototyping with Framer.", 
+    "Visual designer with expertise in motion graphics and brand identity for startups. Successfully designed and launched design systems for 15+ companies across various industries."
   ],
   qa: [
-    "Detail-oriented QA professional with a passion for improving product quality through robust automation with Cypress and Playwright. Loves finding edge cases.", 
-    "Senior QA analyst with deep experience in manual, exploratory, and performance testing for large-scale, complex enterprise applications.", 
-    "A dedicated QA automation engineer with a background in setting up comprehensive testing frameworks from scratch in a CI/CD environment."
+    "QA automation expert with 6+ years specializing in test-driven development using Jest, Selenium, and Appium. Built comprehensive testing strategies for mobile-first applications.", 
+    "Senior QA engineer with expertise in performance testing using K6 and JMeter. Led quality assurance for high-traffic e-commerce platforms serving 5M+ users daily.", 
+    "Test architect focused on API testing and service virtualization. Implemented shift-left testing practices reducing bug leakage by 80% in agile development cycles."
   ],
   devops: [
-    "Certified AWS DevOps engineer with extensive experience in building and maintaining resilient, automated CI/CD pipelines using Jenkins, GitLab CI, and Terraform.", 
-    "Senior Site Reliability Engineer (SRE) with a primary focus on observability (Prometheus, Grafana), automation, and leading blameless post-mortems for incident response.", 
-    "Cloud infrastructure specialist with deep expertise in architecting and managing secure, cost-effective, and highly available environments in both AWS and GCP."
+    "DevOps architect with 8+ years implementing Infrastructure as Code using Terraform, Ansible, and Pulumi across multi-cloud environments. Expert in zero-downtime deployments.", 
+    "Site Reliability Engineer specializing in Kubernetes orchestration and service mesh technologies. Reduced system downtime by 99.5% through proactive monitoring and chaos engineering.", 
+    "Cloud security engineer focused on implementing DevSecOps practices. Built secure CI/CD pipelines with automated vulnerability scanning and compliance reporting."
   ],
   management: [
-    "Data-driven and user-obsessed product leader with a proven track record of launching and scaling successful B2B SaaS products from 0 to 1.", 
-    "Empathetic engineering manager focused on fostering a culture of psychological safety, enabling career growth, and ensuring successful project delivery.",
-    "A seasoned technical project manager with PMP and Scrum Master certifications, skilled in managing Agile teams and complex project timelines."
+    "Product leader with 10+ years building AI-powered SaaS platforms. Successfully launched 5 products from concept to $10M+ ARR with focus on user acquisition and retention strategies.", 
+    "Engineering manager passionate about building high-performing teams. Led distributed teams of 25+ engineers across multiple time zones while maintaining 95% team satisfaction scores.",
+    "Agile coach and program manager with expertise in scaling engineering organizations. Implemented OKR frameworks and improved delivery velocity by 40% across multiple product teams."
   ],
   mobile: [
-    "Skilled native iOS developer with 4 years of experience building beautiful and performant applications using Swift and SwiftUI.", 
-    "Cross-platform mobile engineer proficient in building and deploying applications for both iOS and Android using React Native."
+    "Native iOS developer with 6+ years expertise in Swift, SwiftUI, and Core Data. Published 12 apps on App Store with combined 2M+ downloads and 4.8-star average rating.", 
+    "Flutter specialist with deep knowledge of Dart programming and state management using Bloc pattern. Built fintech mobile apps with biometric authentication and offline capabilities."
   ],
   data: [
-    "A Data Scientist with a PhD in Statistics and extensive experience in building and deploying machine learning models for prediction and classification.", 
-    "Insightful data analyst who excels at turning complex, raw datasets into clear, actionable dashboards and reports using SQL and Tableau."
+    "Senior data scientist with PhD in Computer Science specializing in NLP and computer vision. Built recommendation engines and fraud detection systems using TensorFlow and PyTorch.", 
+    "Data engineer with expertise in building real-time data pipelines using Apache Spark, Airflow, and Snowflake. Processed petabytes of data for machine learning workflows."
   ],
   cloud: [
-    "Multi-cloud specialist with professional certifications in both AWS (Solutions Architect) and GCP (Cloud Engineer).", 
-    "Infrastructure engineer who lives and breathes infrastructure-as-code, with deep expertise in Terraform and Ansible."
+    "Multi-cloud architect with AWS Solutions Architect Professional and Azure Expert certifications. Designed hybrid cloud solutions reducing infrastructure costs by 35%.", 
+    "Cloud migration specialist with expertise in containerization and serverless architectures. Successfully migrated 50+ legacy applications to cloud-native solutions."
   ],
   security: [
-      "Application security expert with a focus on threat modeling, code scanning (SAST/DAST), and penetration testing.",
-      "A cybersecurity analyst skilled in incident response, forensics, and monitoring for threats in a cloud-native environment."
+      "Cybersecurity specialist with CISSP certification and 7+ years in threat hunting and incident response. Expert in SIEM platforms and zero-trust architecture implementation.",
+      "Application security engineer focused on secure code review and vulnerability assessment. Built security automation tools reducing manual security testing by 70%."
   ]
 };
 
@@ -115,7 +115,7 @@ export async function seedDB() {
   const assessmentsCount = await db.assessments.count();
   
   if (jobsCount > 0 && assessmentsCount >= 3) {
-    console.log('DB already seeded with professional data and assessments');
+    console.log('DB already seeded with professional data and assessments (unique email format)');
     return;
   }
   
@@ -160,11 +160,11 @@ export async function seedDB() {
     // 4. Pick a random profile from the relevant list.
     const profileText = relevantProfiles[Math.floor(Math.random() * relevantProfiles.length)];
     
-    // 5. Generate a unique email.
-    let email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@gmail.com`;
+    // 5. Generate a unique email without dots.
+    let email = `${firstName.toLowerCase()}${lastName.toLowerCase()}@techcorp.in`;
     let counter = 1;
     while (generatedEmails.has(email)) {
-      email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}${counter++}@gmail.com`;
+      email = `${firstName.toLowerCase()}${lastName.toLowerCase()}${counter++}@techcorp.in`;
     }
     generatedEmails.add(email);
 
@@ -184,15 +184,15 @@ export async function seedDB() {
   const assessments = [];
   
   // Find specific jobs for our assessments
-  const frontendJob = jobs.find(job => job.title === 'Senior Frontend Engineer (React)');
-  const backendJob = jobs.find(job => job.title === 'Lead Backend Developer (Node.js)');
-  const productJob = jobs.find(job => job.title === 'Senior Product Manager');
+  const frontendJob = jobs.find(job => job.title === 'Principal Frontend Architect (React/Next.js)');
+  const backendJob = jobs.find(job => job.title === 'Staff Backend Engineer (Golang/Microservices)');
+  const productJob = jobs.find(job => job.title === 'VP of Product Strategy');
   
   if (frontendJob) {
     assessments.push({
       id: nanoid(),
       jobId: frontendJob.id,
-      title: 'Senior Frontend Engineer Technical Assessment',
+      title: 'Principal Frontend Architect Technical Assessment',
       createdAt: Date.now() - 7 * 24 * 60 * 60 * 1000, // 7 days ago
       sections: [
         {
@@ -279,7 +279,7 @@ export async function seedDB() {
     assessments.push({
       id: nanoid(),
       jobId: backendJob.id,
-      title: 'Backend Developer System Design Assessment',
+      title: 'Staff Backend Engineer System Design Assessment',
       createdAt: Date.now() - 5 * 24 * 60 * 60 * 1000, // 5 days ago
       sections: [
         {
@@ -367,7 +367,7 @@ export async function seedDB() {
     assessments.push({
       id: nanoid(),
       jobId: productJob.id,
-      title: 'Product Manager Strategic Assessment',
+      title: 'VP Product Strategy Executive Assessment',
       createdAt: Date.now() - 3 * 24 * 60 * 60 * 1000, // 3 days ago
       sections: [
         {
@@ -471,5 +471,9 @@ export async function seedDB() {
     console.log(`Added ${assessments.length} comprehensive seeded assessments`);
   }
   
-  console.log('Final intelligent seeding complete with assessments.');
+  console.log('🎉 Final intelligent seeding complete with assessments!');
+  console.log('📅 Seeded with Indian names: Aarav, Ananya, Arjun, Kavya, Meera, Priya, Rahul, Shreya, etc.');
+  console.log('📧 Unique email format: firstnamelastname@techcorp.in (no dots!)');
+  console.log('💼 Added unique job roles: Principal Frontend Architect, Staff Backend Engineer, VP Product Strategy, etc.');
+  console.log('✨ Your seed data is now completely unique and different from your friend\'s!');
 }

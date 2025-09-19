@@ -46,7 +46,7 @@ const JobsListPage: React.FC = () => {
 
     // State is read directly from the URL, ensuring it persists across navigation.
     const page = Number(searchParams.get('page')) || 1;
-    const pageSize = Number(searchParams.get('pageSize')) || 10;
+    const pageSize = Number(searchParams.get('pageSize')) || 8;
     const status = searchParams.has('status') ? searchParams.get('status') || '' : 'active';
     const search = searchParams.get('search') || '';
 
@@ -275,7 +275,7 @@ const JobsListPage: React.FC = () => {
             <div className="animate-slide-in-up">
                 <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                     <SortableContext items={data.items.map(j => j.id)} strategy={rectSortingStrategy}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             {data.items.map((job: Job, index) => (
                                 <div 
                                     key={job.id} 
@@ -334,7 +334,7 @@ const JobsListPage: React.FC = () => {
                                 className="inline-flex items-center gap-3 px-6 py-3 bg-primary-gradient text-white font-semibold rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 hover:shadow-purple-500/25"
                             >
                                 <PlusIcon className="h-5 w-5" />
-                                Create New Job
+                                Post New Role
                                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                             </button>
                         </div>
@@ -389,10 +389,9 @@ const JobsListPage: React.FC = () => {
                             onChange={handlePageSizeChange} 
                             className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200"
                         >
-                            <option value={10}>📄 10 per page</option>
-                            <option value={15}>📄 15 per page</option>
-                            <option value={20}>📄 20 per page</option>
-                            <option value={25}>📄 25 per page</option>
+                            <option value={8}>📄 8 per page</option>
+                            <option value={16}>📄 16 per page</option>
+                            <option value={24}>📄 24 per page</option>
                         </select>
                     </div>
                 </div>
@@ -442,7 +441,7 @@ const JobsListPage: React.FC = () => {
                     </div>
                 </div>
             )}
-            <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={editingJob ? 'Edit Job' : 'Create New Job'}>
+            <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={editingJob ? 'Update Position' : 'Add New Position'}>
                 <JobForm onSubmit={handleFormSubmit} onCancel={handleCloseModal} job={editingJob} isSubmitting={upsertJobMutation.isPending} />
             </Modal>
         </div>

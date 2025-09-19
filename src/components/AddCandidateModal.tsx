@@ -99,7 +99,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
               minLength: { value: 2, message: 'Name must be at least 2 characters' }
             })}
             className="border border-gray-300 rounded-lg px-3 py-2 w-full text-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200"
-            placeholder="e.g., John Doe"
+            placeholder="e.g., Aarav Kumar or Priya Sharma"
           />
           {errors.name && (
             <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -123,7 +123,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
               }
             })}
             className="border border-gray-300 rounded-lg px-3 py-2 w-full text-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200"
-            placeholder="e.g., john.doe@example.com"
+            placeholder="e.g., aarav.kumar@company.com"
           />
           {errors.email && (
             <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -189,7 +189,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ isOpen, onClose }
             })}
             rows={3}
             className="border border-gray-300 rounded-lg px-3 py-2 w-full text-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200 resize-none"
-            placeholder="Brief description of candidate's background, skills, and experience..."
+            placeholder="Share candidate's expertise, achievements, and professional journey..."
           />
           {errors.profile && (
             <p className="mt-1 text-sm text-red-600">{errors.profile.message}</p>

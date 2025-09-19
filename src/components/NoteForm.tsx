@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import ContentEditable from 'react-contenteditable';
 import type { ChangeEvent } from 'react';
 
-const MENTION_SUGGESTIONS = ['alice', 'bob', 'charlie', 'david', 'manager', 'interviewer', 'recruiter'];
+const MENTION_SUGGESTIONS = ['aarav', 'priya', 'vikram', 'kavya', 'rohan', 'shruti', 'arjun', 'meera', 'hiring_manager', 'tech_interviewer', 'talent_scout'];
 
 type OnSubmitData = {
   note: string;
