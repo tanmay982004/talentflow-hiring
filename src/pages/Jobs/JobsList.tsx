@@ -46,7 +46,7 @@ const JobsListPage: React.FC = () => {
 
     // State is read directly from the URL, ensuring it persists across navigation.
     const page = Number(searchParams.get('page')) || 1;
-    const pageSize = Number(searchParams.get('pageSize')) || 9;
+    const pageSize = Number(searchParams.get('pageSize')) || 10;
     const status = searchParams.has('status') ? searchParams.get('status') || '' : 'active';
     const search = searchParams.get('search') || '';
 
@@ -389,10 +389,10 @@ const JobsListPage: React.FC = () => {
                             onChange={handlePageSizeChange} 
                             className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200"
                         >
-                            <option value={9}>📄 9 per page</option>
-                            <option value={18}>📄 18 per page</option>
-                            <option value={27}>📄 27 per page</option>
-                            <option value={30}>📄 30 per page</option>
+                            <option value={10}>📄 10 per page</option>
+                            <option value={15}>📄 15 per page</option>
+                            <option value={20}>📄 20 per page</option>
+                            <option value={25}>📄 25 per page</option>
                         </select>
                     </div>
                 </div>
